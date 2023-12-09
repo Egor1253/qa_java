@@ -8,11 +8,11 @@ import org.mockito.Mockito;
 
 
 @RunWith(Parameterized.class)
-public class ParametrizedLion {
+public class ParametrizedLionTest {
     private final String sex;
     private final boolean hasMane;
 
-    public ParametrizedLion(String sex, boolean hasMane) throws Exception {
+    public ParametrizedLionTest(String sex, boolean hasMane) throws Exception {
         this.sex = sex;
         this.hasMane = hasMane;
     }
