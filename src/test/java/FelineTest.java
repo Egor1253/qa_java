@@ -23,22 +23,18 @@ public class FelineTest {
         feline.getFood("Хищник");
         assertEquals(of("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
-// нужно чтобы весь код был покрыт тестами, поэтому сделал проверку на травоядное.
-    @Test
-    public void herbivore() throws Exception {
-        when(feline.eatMeat()).thenReturn(of("Трава", "Различные растения"));
-        assertEquals(of("Трава", "Различные растения"), feline.eatMeat());
-    }
+
     // проверяю что возвращается Кошачьи, при вызове семейства.
     @Test
     public void felineGetFamily() {
         feline.getFamily();
         assertEquals("Кошачьи", feline.getFamily());
     }
-    //проверка - передал 1 возвращается 1.
+
+    //проверка - кошки заводят котят: 1.
     @Test
-    public void felineGetKittens(){
-        when(feline.getKittens()).thenReturn(1);
+    public void felineGetKittens() {
+        feline.getKittens();
         assertEquals(1, feline.getKittens());
         System.out.println(feline.getKittens());
     }

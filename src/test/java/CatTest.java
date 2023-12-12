@@ -1,7 +1,8 @@
 import com.example.Cat;
+import com.example.Feline;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -10,14 +11,12 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
-    Cat cat;
-    Cat catSpy = Mockito.spy(Cat.class);
-
+    @Spy
+    public Cat cat = new Cat(new Feline());
     // проверяю: что говорит кот.
     @Test
     public void catSays() {
-        System.out.println(cat.getSound());
-        Mockito.when(cat.getSound()).thenReturn("Мяу");
+        cat.getSound();
         assertEquals("Мяу", cat.getSound());
         System.out.println(cat.getSound());
     }
@@ -25,9 +24,9 @@ public class CatTest {
     // Проверяю: Хищник ли кот?
     @Test
     public void whoIsCat() throws Exception {
-        catSpy.getFood();
-        Mockito.verify(cat, Mockito.times(1)).getFood();
+        cat.getFood();
         assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
+        System.out.println(cat.getFood());
     }
 
 }
