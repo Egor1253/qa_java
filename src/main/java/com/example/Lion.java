@@ -6,7 +6,6 @@ public class Lion extends Feline{
     Feline feline;
     boolean hasMane;
     // при отсутствии конструктора без параметров: public Lion() {}, падают тесты в классе:LionTest.
-    public Lion () {}
     public Lion(String sex, Feline feline) throws Exception {
         this.feline = feline;
         if ("Самец".equals(sex)) {
@@ -14,7 +13,7 @@ public class Lion extends Feline{
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
     }
 
