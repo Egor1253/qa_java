@@ -22,6 +22,7 @@ public class ParametrizedLionTest {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
+                {"Огурец", false},// ожидаемо должен упасть.
 
         };
     }

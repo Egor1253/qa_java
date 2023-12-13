@@ -5,6 +5,7 @@ import java.util.List;
 public class Lion extends Feline{
     Feline feline;
     boolean hasMane;
+    // при отсутствии конструктора без параметров: public Lion() {}, падают тесты в классе:LionTest.
     public Lion () {}
     public Lion(String sex, Feline feline) throws Exception {
         this.feline = feline;
